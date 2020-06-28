@@ -13,21 +13,26 @@ const clearAllCookiesFromDomain = async domain => {
 };
 
 const handlePageActionClick = async () => {
+    console.log('Clicky');
     await clearAllCookiesFromDomain('.medium');
     await browser.tabs.reload(CURRENT_TAB.id);
 };
 
-browser.tabs.onActivated.addListener( async activeInfo => {
+const handleActivated = async activeInfo => {
     // Get active tab
     const tab = await browser.tabs.get(activeInfo.tabId);
-    CURRENT_TAB.url = tab.url;
-    CURRENT_TAB.id = tab.id;
-    
+
     // Check if active tab matches medium url
     if(MEDIUM_URL.test(tab.url)){
+        // Keep track of the current tab
+        CURRENT_TAB.url = tab.url;
+        CURRENT_TAB.id = tab.id;
         // Activate pageAction icon
         await browser.pageAction.show(tab.id);
         // Attach click event listener
         browser.pageAction.onClicked.addListener(handlePageActionClick);
     }
-});
+};
+
+// Listen for activeTab is changed
+browser.tabs.onActivated.addListener(handleActivated);

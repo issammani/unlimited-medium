@@ -8,7 +8,7 @@ A browser extension that allows you to enjoy unlimited medium articles with just
 - This extension uses the WebExtension API, so technically it should work in any browser with support for the API.
 
 - [Chrome Web Store]() ![status badge](https://img.shields.io/badge/status-pending--review-orange)
-- [Firefox Addon]() ![status badge](https://img.shields.io/badge/status-pending--review-orange)
+- [Firefox Addon](https://addons.mozilla.org/firefox/addon/unlimited-medium/) ![status badge](https://img.shields.io/badge/status-published-brightgreen)
 - Or clone [the project repo](https://github.com/issammani/unlimited-medium) and install.
 
 ## Usage

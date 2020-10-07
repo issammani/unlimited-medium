@@ -1,26 +1,26 @@
 {
-  "name": "Unlimited Medium",
-  "version": "1.0.0",
-  "description": "A browser extension that allows you to enjoy unlimited medium articles with just a click !",
-  "permissions": ["*://*.medium.com/*", "tabs", "cookies", "activeTab"],
-  "background": {
-    "scripts": ["js/background.js"],
-    "persistent": false
-  },
-  "page_action": {
-    "default_icon": {
-      "16": "assets/unlimited-medium-16.png",
-      "32": "assets/unlimited-medium-32.png",
-      "48": "assets/unlimited-medium-48.png",
-      "128": "assets/unlimited-medium-128.png"
-    }
-  },
-  "icons": {
-    "16": "assets/unlimited-medium-16.png",
-    "32": "assets/unlimited-medium-32.png",
-    "48": "assets/unlimited-medium-48.png",
-    "128": "assets/unlimited-medium-128.png"
-  },
-  "web_accessible_resources": [],
-  "manifest_version": 2
+    "name": "Unlimited Medium",
+    "version": "2.0.0",
+    "description": "A browser extension that allows you to enjoy unlimited medium articles with just a click !",
+    "permissions": ["*://*.medium.com/*", "tabs", "cookies", "activeTab"],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "assets/unlimited-medium-16.png",
+            "32": "assets/unlimited-medium-32.png",
+            "48": "assets/unlimited-medium-48.png",
+            "128": "assets/unlimited-medium-128.png"
+        }
+    },
+    "icons": {
+        "16": "assets/unlimited-medium-16.png",
+        "32": "assets/unlimited-medium-32.png",
+        "48": "assets/unlimited-medium-48.png",
+        "128": "assets/unlimited-medium-128.png"
+    },
+    "web_accessible_resources": [],
+    "manifest_version": 2
 }

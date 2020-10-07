@@ -2,12 +2,9 @@
   "name": "Unlimited Medium",
   "version": "1.0.0",
   "description": "A browser extension that allows you to enjoy unlimited medium articles with just a click !",
-  "permissions": [ "*://*.medium.com/*", "tabs", "cookies","activeTab"],
+  "permissions": ["*://*.medium.com/*", "tabs", "cookies", "activeTab"],
   "background": {
-    "scripts": [
-      "src/js/utils/browser-polyfill.min.js",
-      "src/js/background.js"
-    ],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "page_action": {

@@ -15,6 +15,13 @@
             "128": "assets/unlimited-medium-128.png"
         }
     },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/content.js"],
+            "run_at": "document_end"
+        }
+    ],
     "icons": {
         "16": "assets/unlimited-medium-16.png",
         "32": "assets/unlimited-medium-32.png",

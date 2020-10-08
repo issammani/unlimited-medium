@@ -7,6 +7,7 @@ const __app_dirname = (subdir) => __dirname + "/app/" + subdir;
 
 module.exports = {
     entry: {
+        content: path.resolve(__app_dirname("src/js"), "content.js"),
         background: path.resolve(__app_dirname("src/js"), "background.js"),
     },
 

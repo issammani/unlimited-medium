@@ -1,9 +1,10 @@
-name: Caching with npm
+name: Build and deploy web extension
 
 on:
-    push:
-        branches:
-            - master
+    push
+    # push:
+    #     # branches:
+    #     #     - master
 
 jobs:
     build:

@@ -32,10 +32,10 @@ jobs:
               run: npm run build
 
             - name: Deploy to chrome webstore
-              - uses: trmcnvn/chrome-addon@v2
+              uses: trmcnvn/chrome-addon@v2
               with:
-                extension: unlimited-medium
-                zip: dist/unlimited_medium-*.zip
-                client-id: ${{ secrets.CHROME_CLIENT_ID }}
-                client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-                refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+                  extension: unlimited-medium
+                  zip: dist/unlimited_medium-*.zip
+                  client-id: ${{ secrets.CHROME_CLIENT_ID }}
+                  client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+                  refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}

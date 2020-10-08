@@ -32,6 +32,14 @@ jobs:
             - name: Build
               run: npm run build
 
+            - name: Deploy to firefox store
+              uses: trmcnvn/firefox-addon@v1
+              with:
+                  uuid: "${{ secrets.FIREFOX_UUID }}"
+                  manifest: dist/manifest.json
+                  api-key: ${{ secrets.FIREFOX_API_KEY }}
+                  api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+
             - name: Deploy to chrome webstore
               uses: trmcnvn/chrome-addon@v2
               with:

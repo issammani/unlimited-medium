@@ -1,0 +1,41 @@
+name: Caching with npm
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              env:
+                  cache-name: cache-node-modules
+              with:
+                  # npm cache files are stored in `~/.npm` on Linux/macOS
+                  path: ~/.npm
+                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-${{ env.cache-name }}-
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build
+
+            - name: Deploy to chrome webstore
+              - uses: trmcnvn/chrome-addon@v2
+              with:
+                extension: unlimited-medium
+                zip: dist/unlimited_medium-*.zip
+                client-id: ${{ secrets.CHROME_CLIENT_ID }}
+                client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+                refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}

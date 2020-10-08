@@ -1,5 +1,5 @@
 # Unlimited-Medium
-![Logo](https://github.com/issammani/unlimited-medium/blob/master/assets/unlimited-medium-logo.png?raw=true)
+![Logo](https://github.com/issammani/unlimited-medium/blob/master/app/assets/unlimited-medium-logo.png?raw=true)
 
 A browser extension that allows you to enjoy unlimited medium articles with just a click !
 

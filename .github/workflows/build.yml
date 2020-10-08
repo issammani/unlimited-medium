@@ -33,8 +33,9 @@ jobs:
               run: npm run build
 
             - name: Deploy to firefox store
-              uses: saphareas/sign-web-extension-action@master
+              uses: issammani/sign-web-extension-action@feature/custom-io-dir
               with:
+                  web-ext-source-dir: "dist"
                   web-ext-id: "${{ secrets.FIREFOX_UUID }}"
                   sign-listed: true
                   amo-api-key: ${{ secrets.FIREFOX_API_KEY }}

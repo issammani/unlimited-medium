@@ -4,8 +4,10 @@
     "description": "A browser extension that allows you to enjoy unlimited medium articles with just a click !",
     "main": "webpack.config.js",
     "scripts": {
-        "zip": "web-ext run dist",
-        "build": "webpack --config webpack.config.js --mode production",
+        "build:webext": "web-ext build -s dist && mv web-ext-artifacts/unlimited_medium-*.zip dist && rm -rf web-ext-artifacts",
+        "build:webpack": "webpack --config webpack.config.js --mode production",
+        "build:clean" : "rm -rf dist",
+        "build": "npm run build:clean && npm run build:webpack && npm run build:webext",
         "dev": "webpack --config webpack.config.js --mode development --open -w"
     },
     "repository": {

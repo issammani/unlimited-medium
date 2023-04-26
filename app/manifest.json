@@ -1,6 +1,6 @@
 {
     "name": "Unlimited Medium",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A browser extension that allows you to enjoy unlimited medium articles with just a click !",
     "permissions": ["<all_urls>", "tabs", "cookies", "storage"],
     "background": {

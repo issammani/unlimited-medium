@@ -23,13 +23,11 @@ window.addEventListener("load", () => {
         mediumScripts.length > 0 ||
         SCRIPT_SRC_REGEX.test(window.location.hostname)
     ) {
-        console.log("Unlimited Medium extension: medium blog detected");
         browser.runtime.sendMessage({
             type: "medium-blog",
             data: { domain: window.location.host, url: window.location.origin },
         });
     } else {
-        // console.log("Not a medium blog :( "); // disabled to prevent console pollution
         browser.runtime.sendMessage({ type: "not-medium-blog" });
     }
 });

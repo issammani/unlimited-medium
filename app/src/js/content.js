@@ -8,7 +8,12 @@ window.addEventListener("load", () => {
     // Other extensions keep track of all self hosted blogs
     // I find this solution to be more robust, general and requires less oversight
 
-    const SCRIPT_SRC_REGEX = /https?:\/\/cdn-(?:static|client)(?:-\d)?\.medium\.com\//;
+    // The site:
+    // https://betterprogramming.pub/software-engineers-avoid-being-the-critical-person-on-your-team-b94494f28154
+    // loads from https://cdn.optimizely.com/js/16180790160.js
+    // so added a quick regex modification to capture the pattern
+
+    const SCRIPT_SRC_REGEX = /https?:\/\/cdn-(?:static|client)(?:-\d)?\.medium\.com\/|https?:\/\/cdn.optimizely\.com\/js\/\d+\.js/;
     // const MEDIUM_URL = /.*:\/\/.*medium.com\/.*/;
     // Get all scripts
     const scripts = document.querySelectorAll("script");
